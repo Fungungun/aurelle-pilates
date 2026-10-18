@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aurelle Pilates · Private Reformer Pilates in Ferny Grove</title>
+<meta name="description" content="Private 1-on-1 reformer Pilates for beginners in Ferny Grove, Brisbane. A structured six-session path, taught in English or Mandarin. 九蕾普拉提 · 一对一 Reformer 私教，可用中文上课。">
+<meta property="og:title" content="Aurelle Pilates · Private Reformer Pilates in Ferny Grove">
+<meta property="og:description" content="One teacher. One reformer. Just you. A structured six-session path for beginners, in English or Mandarin.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FBF7F0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<script>
+  // 语言：先看上次的选择，再看浏览器语言
+  (function () {
+    var l = (location.search.match(/[?&]lang=(en|zh)/) || [])[1] || null;
+    if (!l) try { l = localStorage.getItem('lang'); } catch (e) {}
+    if (!l) l = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+    document.documentElement.lang = l === 'zh' ? 'zh-CN' : 'en';
+  })();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ExerciseGym","name":"Aurelle Pilates","alternateName":"九蕾普拉提",
+ "description":"Private 1-on-1 reformer Pilates for beginners, taught in English or Mandarin.",
+ "address":{"@type":"PostalAddress","addressLocality":"Ferny Grove","addressRegion":"QLD","postalCode":"4055","addressCountry":"AU"},
+ "areaServed":["Ferny Grove","Ferny Hills","Arana Hills","Upper Kedron","Keperra","Samford","The Gap"],
+ "priceRange":"$49–$75"}
+</script>
+<style>
+:root{
+  --bg:#FBF7F0; --bg2:#F3EBDD; --card:#FFFDF9; --ink:#2B2420; --mute:#6F625A;
+  --gold:#B08236; --gold2:#8A6424; --line:#E6DAC6; --onGold:#FFFDF9;
+  --serif:"Cormorant Garamond","Noto Serif SC",Georgia,serif;
+  --sans:"Jost","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#191512; --bg2:#221C18; --card:#251F1B; --ink:#F2EADF; --mute:#B9AB9C;
+    --gold:#D6AE68; --gold2:#E8C88C; --line:#3A312A; --onGold:#191512;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#191512; --bg2:#221C18; --card:#251F1B; --ink:#F2EADF; --mute:#B9AB9C;
+  --gold:#D6AE68; --gold2:#E8C88C; --line:#3A312A; --onGold:#191512;
+}
+html[lang="en"] [data-l="zh"], html[lang="zh-CN"] [data-l="en"]{display:none !important}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+html[lang="zh-CN"] body{font-size:16px;line-height:1.85}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+@media (max-width:640px){.wrap{padding:0 16px}}
+
+/* 顶部导航 */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid transparent;transition:border-color .3s}
+header.scrolled{border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:34px;height:34px}
+.brand b{font:500 22px/1 var(--serif);letter-spacing:.32em;display:block}
+.brand small{font:400 10px/1 var(--sans);letter-spacing:.42em;color:var(--mute);display:block;margin-top:5px}
+.links{display:flex;align-items:center;gap:28px;font-size:14px;letter-spacing:.06em}
+.links a{text-decoration:none;color:var(--mute)}
+.links a:hover{color:var(--ink)}
+.lang{border:1px solid var(--line);background:none;color:var(--ink);border-radius:999px;padding:6px 14px;font:400 13px var(--sans);cursor:pointer}
+.btn{display:inline-block;background:var(--gold);color:var(--onGold);text-decoration:none;padding:14px 28px;border-radius:999px;font:400 15px/1 var(--sans);letter-spacing:.06em;border:1px solid var(--gold);transition:background .2s,transform .2s;cursor:pointer}
+.btn:hover{background:var(--gold2);border-color:var(--gold2);transform:translateY(-1px)}
+.btn.ghost{background:none;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--gold);background:none}
+.btn.sm{padding:10px 20px;font-size:14px}
+@media (max-width:860px){.links a:not(.btn){display:none}}
+@media (max-width:420px){.links .btn{display:none}.brand b{font-size:19px}}
+
+/* 首屏 */
+.hero{padding:72px 0 96px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.eyebrow{font:400 12px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin:0 0 22px}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0}
+h1{font-size:clamp(44px,6.4vw,76px);line-height:1.04;letter-spacing:-.01em}
+html[lang="zh-CN"] h1{font-size:clamp(30px,4.2vw,48px);line-height:1.35;letter-spacing:.02em}
+html[lang="zh-CN"] h1 em{white-space:nowrap}
+h1 em{font-style:italic;color:var(--gold)}
+.lead{font-size:19px;color:var(--mute);max-width:520px;margin:26px 0 36px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero-art{position:relative;aspect-ratio:1/1}
+.hero-art svg{width:100%;height:100%}
+.facts{display:flex;gap:28px;flex-wrap:wrap;margin-top:44px;font-size:13px;letter-spacing:.08em;color:var(--mute)}
+.facts span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:10px;vertical-align:middle}
+@media (max-width:860px){.hero{padding:40px 0 64px}.hero .wrap{grid-template-columns:1fr}.hero-art{max-width:420px;margin:0 auto;order:-1;width:80%}}
+
+/* 通用区块 */
+section{padding:96px 0}
+section.alt{background:var(--bg2)}
+.head{max-width:640px;margin-bottom:56px}
+h2{font-size:clamp(34px,4.4vw,52px);line-height:1.1}
+html[lang="zh-CN"] h2{font-size:clamp(28px,3.6vw,40px);line-height:1.35}
+.head p{color:var(--mute);margin:18px 0 0}
+@media (max-width:640px){section{padding:64px 0}.head{margin-bottom:36px}}
+
+/* 四个特点 */
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.pillar{background:var(--card);padding:36px 28px}
+.pillar .n{font:italic 400 30px/1 var(--serif);color:var(--gold)}
+.pillar h3{font-size:24px;margin:18px 0 10px}
+html[lang="zh-CN"] .pillar h3{font-size:20px}
+.pillar p{margin:0;color:var(--mute);font-size:15.5px}
+@media (max-width:960px){.pillars{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.pillars{grid-template-columns:1fr}}
+
+/* 6 节入门课 */
+.path{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:s}
+.step{border-top:1px solid var(--gold);padding:24px 4px 8px}
+.step .k{font:400 12px/1 var(--sans);letter-spacing:.28em;color:var(--gold);text-transform:uppercase}
+.step h3{font-size:25px;margin:12px 0 8px;line-height:1.2}
+html[lang="zh-CN"] .step h3{font-size:20px}
+.step p{margin:0;color:var(--mute);font-size:15.5px}
+.note{margin-top:40px;color:var(--mute);font-size:15px}
+@media (max-width:860px){.path{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.path{grid-template-columns:1fr}}
+
+/* 价格 */
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;align-items:stretch}
+.price{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:32px 26px;display:flex;flex-direction:column}
+.price.feat{border-color:var(--gold);box-shadow:0 18px 50px -30px color-mix(in srgb,var(--gold) 70%,transparent);position:relative}
+.tag{position:absolute;top:-12px;left:26px;background:var(--gold);color:var(--onGold);font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.price h3{font-size:24px}
+html[lang="zh-CN"] .price h3{font-size:20px}
+.amt{font:500 52px/1 var(--serif);margin:18px 0 4px}
+.per{color:var(--mute);font-size:14px;min-height:22px}
+.price ul{list-style:none;padding:0;margin:20px 0 0;font-size:15px;color:var(--mute);flex:1}
+.price li{padding:8px 0;border-top:1px solid var(--line)}
+.price .btn{margin-top:24px;text-align:center}
+.founding{margin-top:28px;border:1px dashed var(--gold);border-radius:16px;padding:20px 24px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.founding b{font:500 22px var(--serif);color:var(--gold)}
+html[lang="zh-CN"] .founding b{font-size:19px}
+.founding p{margin:4px 0 0;color:var(--mute);font-size:15px}
+@media (max-width:1000px){.prices{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.prices{grid-template-columns:1fr}}
+
+/* 第一次来 + 工作室 */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.steps{list-style:none;padding:0;margin:0;counter-reset:v}
+.steps li{counter-increment:v;display:grid;grid-template-columns:52px 1fr;padding:18px 0;border-top:1px solid var(--line)}
+.steps li::before{content:counter(v,decimal-leading-zero);font:italic 400 26px/1.2 var(--serif);color:var(--gold)}
+.steps b{font-weight:500;display:block;margin-bottom:2px}
+.steps span{color:var(--mute);font-size:15.5px}
+.studio{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:36px}
+.studio h3{font-size:30px;margin-bottom:12px}
+html[lang="zh-CN"] .studio h3{font-size:24px}
+.studio p{color:var(--mute);margin:0 0 14px}
+.areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.areas span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:13px;color:var(--mute)}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:40px}}
+
+/* 关于老师 */
+.about{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:center}
+.portrait{aspect-ratio:4/5;border-radius:200px 200px 24px 24px;background:linear-gradient(160deg,var(--bg2),color-mix(in srgb,var(--gold) 28%,var(--bg2)));display:grid;place-items:center;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait .mono{font:italic 400 120px/1 var(--serif);color:var(--gold)}
+.about blockquote{margin:0;font:400 clamp(24px,2.8vw,32px)/1.4 var(--serif)}
+html[lang="zh-CN"] .about blockquote{font-size:clamp(20px,2.2vw,25px);line-height:1.7}
+.about .sig{margin-top:24px;color:var(--mute);font-size:15px}
+.cred{margin-top:12px;color:var(--gold);font-size:14px;letter-spacing:.04em}
+@media (max-width:860px){.about{grid-template-columns:1fr;gap:32px}.portrait{max-width:260px}}
+
+/* 常见问题 */
+.faq{max-width:820px}
+details{border-top:1px solid var(--line);padding:4px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font:500 22px/1.35 var(--serif);position:relative}
+html[lang="zh-CN"] summary{font-size:18px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:16px;font:300 28px var(--sans);color:var(--gold);transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 20px;color:var(--mute);max-width:700px}
+
+/* 预约 */
+.book{text-align:center}
+.book .head{margin:0 auto 40px}
+.cal{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;max-width:960px;margin:0 auto}
+.cal iframe{width:100%;height:720px;border:0;display:block;background:#fff}
+.soon{max-width:560px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:40px 32px}
+.soon h3{font-size:28px;margin-bottom:10px}
+html[lang="zh-CN"] .soon h3{font-size:22px}
+.soon p{color:var(--mute);margin:0}
+.contact{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.small{font-size:14px;color:var(--mute);margin-top:20px}
+
+footer{border-top:1px solid var(--line);padding:40px 0;font-size:13px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Aurelle Pilates">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18.5" fill="none" stroke="var(--gold)" stroke-width="1"/><path d="M8 26a12 12 0 0 1 24 0" fill="none" stroke="var(--gold)" stroke-width="1.6" stroke-linecap="round"/><path d="M13 26a7 7 0 0 1 14 0" fill="none" stroke="var(--gold)" stroke-width="1" stroke-linecap="round" opacity=".6"/><line x1="7" y1="29" x2="33" y2="29" stroke="var(--gold)" stroke-width="1"/></svg>
+      <span><b>AURELLE</b><small><span data-l="en">PILATES</span><span data-l="zh">九蕾普拉提</span></small></span>
+    </a>
+    <nav class="links">
+      <a href="#path"><span data-l="en">The 6-session path</span><span data-l="zh">入门课程</span></a>
+      <a href="#pricing"><span data-l="en">Pricing</span><span data-l="zh">价格</span></a>
+      <a href="#studio"><span data-l="en">Studio</span><span data-l="zh">工作室</span></a>
+      <a href="#faq"><span data-l="en">FAQ</span><span data-l="zh">常见问题</span></a>
+      <button class="lang" id="lang" type="button" aria-label="Switch language"><span data-l="en">中文</span><span data-l="zh">EN</span></button>
+      <a class="btn sm" href="#book"><span data-l="en">Book</span><span data-l="zh">预约</span></a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow"><span data-l="en">Private Reformer Studio · Ferny Grove</span><span data-l="zh">Ferny Grove · 一对一 Reformer 私教</span></p>
+      <h1>
+        <span data-l="en">Private reformer Pilates, <em>made for beginners.</em></span>
+        <span data-l="zh">专为初学者打造的<br><em>一对一 Reformer 普拉提</em></span>
+      </h1>
+      <p class="lead">
+        <span data-l="en">One teacher. One reformer. Just you. A calm 1-on-1 studio with a six-session path that takes you from your very first class to a complete workout. Taught in English or Mandarin.</span>
+        <span data-l="zh">一位老师，一台器械，整节课只有你。用 6 节循序渐进的入门课，带你从第一次上器械，到能独立完成一节完整的课。可以用中文或英文上课。</span>
+      </p>
+      <div class="cta">
+        <a class="btn" href="#book"><span data-l="en">Book a first session · $49</span><span data-l="zh">预约首次体验课 · $49</span></a>
+        <a class="btn ghost" href="#path"><span data-l="en">See the 6-session path</span><span data-l="zh">了解 6 节入门课</span></a>
+      </div>
+      <div class="facts">
+        <span data-l="en">1-on-1 only</span><span data-l="zh">只做一对一</span>
+        <span data-l="en">English · 中文</span><span data-l="zh">中文 · English</span>
+        <span data-l="en">60-minute sessions</span><span data-l="zh">每节 60 分钟</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 500 500">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="58%" r="50%">
+            <stop offset="0" stop-color="var(--gold)" stop-opacity=".30"/>
+            <stop offset="1" stop-color="var(--gold)" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+        <circle cx="250" cy="280" r="240" fill="url(#glow)"/>
+        <path d="M60 330a190 190 0 0 1 380 0" fill="none" stroke="var(--gold)" stroke-width="1.4"/>
+        <path d="M105 330a145 145 0 0 1 290 0" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".55"/>
+        <path d="M150 330a100 100 0 0 1 200 0" fill="none" stroke="var(--gold)" stroke-width="1" opacity=".3"/>
+        <!-- Reformer 线稿 -->
+        <g fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="40" y="340" width="420" height="16" rx="8"/>
+          <line x1="70" y1="356" x2="70" y2="384"/><line x1="430" y1="356" x2="430" y2="384"/>
+          <rect x="205" y="318" width="150" height="22" rx="6"/>
+          <path d="M215 318v-14a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v14"/>
+          <line x1="300" y1="318" x2="300" y2="304"/><line x1="320" y1="318" x2="320" y2="304"/>
+          <path d="M92 340V270a10 10 0 0 1 10-10h4"/>
+          <path d="M150 340V270a10 10 0 0 0-10-10h-4"/>
+          <line x1="96" y1="260" x2="146" y2="260" stroke-width="3"/>
+          <path d="M160 332l6-6 6 6 6-6 6 6 6-6 6 6" stroke="var(--gold)" stroke-width="1.6"/>
+          <path d="M460 340v-60" /><circle cx="460" cy="274" r="5"/>
+          <path d="M455 278l-80 34" stroke="var(--mute)" stroke-width="1.2"/>
+        </g>
+        <circle cx="250" cy="140" r="6" fill="var(--gold)"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="why">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span data-l="en">Why Aurelle</span><span data-l="zh">为什么选择 Aurelle</span></p>
+      <h2><span data-l="en">The whole hour is about you.</span><span data-l="zh">整整一小时，只关注你。</span></h2>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar"><div class="n">i.</div>
+        <h3><span data-l="en">Only you in the room</span><span data-l="zh">整间工作室只为你</span></h3>
+        <p><span data-l="en">No crowded class and no keeping up. Every cue, spring change and correction is for your body.</span><span data-l="zh">没有拥挤的团课，也不用跟上别人。每一句提示、每一次换弹簧、每一个纠正都只针对你。</span></p></div>
+      <div class="pillar"><div class="n">ii.</div>
+        <h3><span data-l="en">A path, not random workouts</span><span data-l="zh">有路线的课程</span></h3>
+        <p><span data-l="en">Six sessions that build on each other, so you always know what comes next and why.</span><span data-l="zh">6 节课一节接一节递进，你始终知道下一步练什么、为什么这样练。</span></p></div>
+      <div class="pillar"><div class="n">iii.</div>
+        <h3><span data-l="en">English or 中文</span><span data-l="zh">中文或英文教学</span></h3>
+        <p><span data-l="en">Learn the method in the language you think in. Every cue can be given in Mandarin.</span><span data-l="zh">用你最习惯的语言学普拉提，每一句口令都可以用中文讲。</span></p></div>
+      <div class="pillar"><div class="n">iv.</div>
+        <h3><span data-l="en">Safety first</span><span data-l="zh">安全第一</span></h3>
+        <p><span data-l="en">Every new client starts with a health questionnaire and a short movement check before we begin.</span><span data-l="zh">每位新学员上课前先填写健康问卷，并做一次简单的体态和活动度观察。</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="path">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span data-l="en">Foundations 6</span><span data-l="zh">6 节入门课</span></p>
+      <h2><span data-l="en">From your first class to a full workout, in six sessions.</span><span data-l="zh">6 节课，从第一次上器械，到完整的一节课。</span></h2>
+      <p><span data-l="en">Each session adds one new layer to what you already know, so nothing feels like a leap.</span><span data-l="zh">每节课只在你已经会的基础上加一层新内容，不会突然变难。</span></p>
+    </div>
+    <div class="path reveal">
+      <div class="step"><div class="k"><span data-l="en">Session 1</span><span data-l="zh">第 1 节</span></div>
+        <h3><span data-l="en">Meet the reformer</span><span data-l="zh">认识器械</span></h3>
+        <p><span data-l="en">Getting on and off safely, finding neutral spine, breathing, and your first footwork series.</span><span data-l="zh">安全上下器械，找到中立位，学会呼吸，完成第一组脚部系列。</span></p></div>
+      <div class="step"><div class="k"><span data-l="en">Session 2</span><span data-l="zh">第 2 节</span></div>
+        <h3><span data-l="en">Legs and straps</span><span data-l="zh">单腿与脚套</span></h3>
+        <p><span data-l="en">Single-leg work, your first time in the straps, and preparing for the Hundred.</span><span data-l="zh">单腿练习，第一次使用脚套，为 Hundred 做准备。</span></p></div>
+      <div class="step"><div class="k"><span data-l="en">Session 3</span><span data-l="zh">第 3 节</span></div>
+        <h3><span data-l="en">The Hundred and Elephant</span><span data-l="zh">完整 Hundred 与大象</span></h3>
+        <p><span data-l="en">The full Hundred, leg circles, and your first time standing on the moving carriage.</span><span data-l="zh">完整的 Hundred、腿部画圈，第一次站上会滑动的车架。</span></p></div>
+      <div class="step"><div class="k"><span data-l="en">Session 4</span><span data-l="zh">第 4 节</span></div>
+        <h3><span data-l="en">Kneeling and the long box</span><span data-l="zh">跪姿与长箱</span></h3>
+        <p><span data-l="en">A second layer of core work, kneeling for the first time, and back extension on the box.</span><span data-l="zh">第二层核心训练，第一次跪姿练习，在长箱上做背部伸展。</span></p></div>
+      <div class="step"><div class="k"><span data-l="en">Session 5</span><span data-l="zh">第 5 节</span></div>
+        <h3><span data-l="en">Finding flow</span><span data-l="zh">找到流畅感</span></h3>
+        <p><span data-l="en">Linking exercises with fewer pauses, plus new stretches and preparations.</span><span data-l="zh">动作之间衔接更流畅、停顿更少，加入新的拉伸和进阶准备。</span></p></div>
+      <div class="step"><div class="k"><span data-l="en">Session 6</span><span data-l="zh">第 6 节</span></div>
+        <h3><span data-l="en">Graduation</span><span data-l="zh">毕业课</span></h3>
+        <p><span data-l="en">A complete 55-minute class from start to finish, and a re-assessment to see how far you've come.</span><span data-l="zh">从头到尾完成一节 55 分钟的完整课程，并复评，看看自己进步了多少。</span></p></div>
+    </div>
+    <p class="note reveal"><span data-l="en">Most people complete the path in 4 to 8 weeks, at one or two sessions a week.</span><span data-l="zh">每周上 1–2 节，大多数人 4–8 周完成。</span></p>
+  </div>
+</section>
+
+<section class="alt" id="pricing">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span data-l="en">Pricing</span><span data-l="zh">价格</span></p>
+      <h2><span data-l="en">Simple, honest pricing.</span><span data-l="zh">价格简单透明。</span></h2>
+      <p><span data-l="en">All sessions are private, 60 minutes, in AUD.</span><span data-l="zh">所有课程都是一对一、60 分钟，价格为澳元。</span></p>
+    </div>
+    <div class="prices reveal">
+      <div class="price">
+        <h3><span data-l="en">First Session</span><span data-l="zh">首次体验课</span></h3>
+        <div class="amt">$49</div><div class="per"><span data-l="en">once per person</span><span data-l="zh">每人限一次</span></div>
+        <ul>
+          <li><span data-l="en">Health check and goals chat</span><span data-l="zh">健康问卷与目标沟通</span></li>
+          <li><span data-l="en">Your first reformer workout</span><span data-l="zh">第一次 Reformer 练习</span></li>
+          <li><span data-l="en">$49 credited if you join Foundations 6 within 7 days</span><span data-l="zh">7 天内报名入门课，$49 可全额抵扣</span></li>
+        </ul>
+        <a class="btn ghost" href="#book"><span data-l="en">Book</span><span data-l="zh">预约</span></a>
+      </div>
+      <div class="price feat">
+        <span class="tag"><span data-l="en">Most popular</span><span data-l="zh">最受欢迎</span></span>
+        <h3><span data-l="en">Foundations 6</span><span data-l="zh">入门 6 节课</span></h3>
+        <div class="amt">$330</div><div class="per"><span data-l="en">$55 per session</span><span data-l="zh">每节 $55</span></div>
+        <ul>
+          <li><span data-l="en">The complete six-session path</span><span data-l="zh">完整的 6 节入门课程</span></li>
+          <li><span data-l="en">Progress notes after every session</span><span data-l="zh">每节课后记录你的进度</span></li>
+          <li><span data-l="en">Use within 8 weeks</span><span data-l="zh">8 周内使用</span></li>
+        </ul>
+        <a class="btn" href="#book"><span data-l="en">Start here</span><span data-l="zh">从这里开始</span></a>
+      </div>
+      <div class="price">
+        <h3><span data-l="en">Single Session</span><span data-l="zh">单节私教</span></h3>
+        <div class="amt">$75</div><div class="per"><span data-l="en">after Foundations</span><span data-l="zh">完成入门课后</span></div>
+        <ul>
+          <li><span data-l="en">A session built around your goals</span><span data-l="zh">围绕你的目标安排课程</span></li>
+          <li><span data-l="en">New exercises as you progress</span><span data-l="zh">随着进步加入新动作</span></li>
+        </ul>
+        <a class="btn ghost" href="#book"><span data-l="en">Book</span><span data-l="zh">预约</span></a>
+      </div>
+      <div class="price">
+        <h3><span data-l="en">10 Sessions</span><span data-l="zh">10 节课包</span></h3>
+        <div class="amt">$650</div><div class="per"><span data-l="en">$65 per session</span><span data-l="zh">每节 $65</span></div>
+        <ul>
+          <li><span data-l="en">Best value for regular practice</span><span data-l="zh">长期练习最划算</span></li>
+          <li><span data-l="en">Valid for 4 months</span><span data-l="zh">4 个月有效</span></li>
+        </ul>
+        <a class="btn ghost" href="#book"><span data-l="en">Book</span><span data-l="zh">预约</span></a>
+      </div>
+    </div>
+    <div class="founding reveal" id="founding" hidden>
+      <div>
+        <b><span data-l="en">Founding client offer · 10 places</span><span data-l="zh">创始学员优惠 · 限 10 名</span></b>
+        <p><span data-l="en">Our first ten clients get Foundations 6 for $270 ($45 a session) in return for an honest review.</span><span data-l="zh">前 10 位学员入门 6 节课只需 $270（每节 $45），只需要在课程结束后写一条真实评价。</span></p>
+      </div>
+      <a class="btn sm" href="#book"><span data-l="en">Claim a place</span><span data-l="zh">预约名额</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="studio">
+  <div class="wrap two">
+    <div class="reveal">
+      <p class="eyebrow"><span data-l="en">Your first visit</span><span data-l="zh">第一次上课</span></p>
+      <h2 style="margin-bottom:32px"><span data-l="en">What to expect.</span><span data-l="zh">上课流程</span></h2>
+      <ol class="steps">
+        <li><div><b><span data-l="en">Book online</span><span data-l="zh">在线预约</span></b><span><span data-l="en">Choose a time that suits you. You'll get a confirmation with the studio address.</span><span data-l="zh">选一个合适的时间，确认邮件里会附上工作室地址。</span></span></div></li>
+        <li><div><b><span data-l="en">Come comfortable</span><span data-l="zh">穿着舒适</span></b><span><span data-l="en">Wear fitted, comfortable clothes. Grip socks are recommended.</span><span data-l="zh">请穿贴身、舒适的运动服，建议穿防滑袜。</span></span></div></li>
+        <li><div><b><span data-l="en">A short chat</span><span data-l="zh">简单沟通</span></b><span><span data-l="en">About 10 minutes on your goals and health history, with a quick posture check.</span><span data-l="zh">大约 10 分钟，聊聊你的目标和健康情况，并做一次简单的体态观察。</span></span></div></li>
+        <li><div><b><span data-l="en">Then we move</span><span data-l="zh">开始练习</span></b><span><span data-l="en">You'll learn how the reformer works and how to use it safely, then begin your first session.</span><span data-l="zh">先了解器械怎么用、怎么安全上下，然后开始第一节课。</span></span></div></li>
+      </ol>
+    </div>
+    <div class="studio reveal">
+      <p class="eyebrow"><span data-l="en">The studio</span><span data-l="zh">工作室</span></p>
+      <h3><span data-l="en">A private studio in Ferny Grove</span><span data-l="zh">位于 Ferny Grove 的私人工作室</span></h3>
+      <p><span data-l="en">A quiet home studio set up for one person at a time. There's no front desk, no crowd and no mirrors full of strangers, just a reformer and an hour that's yours.</span><span data-l="zh">安静的家庭工作室，每次只接待一位学员。没有前台，没有人群，也没有一面墙的陌生人，只有一台 Reformer 和属于你的一小时。</span></p>
+      <p><span data-l="en">For privacy, the exact address is sent with your booking confirmation.</span><span data-l="zh">为保护隐私，具体地址会在预约确认后发送给你。</span></p>
+      <div class="areas"><span>Ferny Grove</span><span>Ferny Hills</span><span>Arana Hills</span><span>Upper Kedron</span><span>Keperra</span><span>Samford</span><span>The Gap</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap about">
+    <div class="portrait reveal" id="portrait"><span class="mono">J</span></div>
+    <div class="reveal">
+      <p class="eyebrow"><span data-l="en">Your teacher</span><span data-l="zh">你的老师</span></p>
+      <blockquote>
+        <span data-l="en">“I teach every session one-on-one, so the hour is about your body, your goals and your pace. I'll keep things calm and clear, and I'll always tell you why we're doing each exercise.”</span>
+        <span data-l="zh">“每节课都是一对一，所以这一小时完全围绕你的身体、你的目标和你的节奏。我会讲得清楚、教得耐心，也会告诉你每个动作为什么这样做。”</span>
+      </blockquote>
+      <p class="sig">— Jessica · <span data-l="en">English &amp; Mandarin</span><span data-l="zh">中文、英文授课</span></p>
+      <p class="cred" id="cred" hidden><span data-l="en"></span><span data-l="zh"></span></p>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span data-l="en">Questions</span><span data-l="zh">常见问题</span></p>
+      <h2><span data-l="en">Good to know.</span><span data-l="zh">上课前你可能想知道的</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary><span data-l="en">I've never done Pilates. Is that OK?</span><span data-l="zh">我从来没练过普拉提，可以吗？</span></summary>
+        <p><span data-l="en">Yes. The Foundations path is designed for complete beginners, and we start from how to get on the reformer.</span><span data-l="zh">完全可以。6 节入门课就是为零基础设计的，从怎么上器械开始教。</span></p></details>
+      <details><summary><span data-l="en">Do I need to be fit or flexible?</span><span data-l="zh">需要有体能或柔韧性基础吗？</span></summary>
+        <p><span data-l="en">No. Springs are set for you, and every exercise has an easier option. Strength and flexibility are what you build here.</span><span data-l="zh">不需要。弹簧阻力会按你的情况调整，每个动作都有简化版本。力量和柔韧性正是你要在这里练出来的。</span></p></details>
+      <details><summary><span data-l="en">I have an injury, I'm pregnant, or I've had recent surgery.</span><span data-l="zh">我有伤病、正在怀孕或最近做过手术，可以上吗？</span></summary>
+        <p><span data-l="en">Please mention it when you book. Some conditions need clearance from your GP or physio first, and some are better looked after by a clinical Pilates practitioner. I'll always be honest about which is right for you.</span><span data-l="zh">请在预约时告诉我。有些情况需要先得到医生或物理治疗师的许可，有些更适合去临床普拉提（康复）机构。我会如实告诉你哪种更适合。</span></p></details>
+      <details><summary><span data-l="en">What should I wear and bring?</span><span data-l="zh">要穿什么、带什么？</span></summary>
+        <p><span data-l="en">Fitted, comfortable activewear, grip socks and a water bottle. Loose tops can catch on the equipment.</span><span data-l="zh">贴身舒适的运动服、防滑袜和一瓶水。太宽松的上衣容易卡到器械。</span></p></details>
+      <details><summary><span data-l="en">What is your cancellation policy?</span><span data-l="zh">取消和改期怎么算？</span></summary>
+        <p><span data-l="en">Please give at least 24 hours' notice to cancel or reschedule. Later cancellations are charged as a session, but your first one is on me.</span><span data-l="zh">请至少提前 24 小时取消或改期。不足 24 小时的取消按一节课计算，第一次可以免除。</span></p></details>
+      <details><summary><span data-l="en">How do I pay?</span><span data-l="zh">怎么付款？</span></summary>
+        <p><span data-l="en">By PayID, bank transfer or card, before or at your session.</span><span data-l="zh">课前或上课时，用 PayID、银行转账或刷卡付款。</span></p></details>
+    </div>
+  </div>
+</section>
+
+<section class="alt book" id="book">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow"><span data-l="en">Book</span><span data-l="zh">预约</span></p>
+      <h2><span data-l="en">Choose your first session.</span><span data-l="zh">选择你的第一节课</span></h2>
+      <p><span data-l="en">Pick a time below. You'll receive an email confirmation with the address and what to bring.</span><span data-l="zh">在下面选择时间，你会收到一封确认邮件，里面有地址和上课须知。</span></p>
+    </div>
+    <div id="cal" class="cal" hidden></div>
+    <div id="soon" class="soon">
+      <h3><span data-l="en">Online booking opens soon</span><span data-l="zh">在线预约即将开放</span></h3>
+      <p><span data-l="en">We're getting the studio ready. Get in touch and we'll hold a founding-client place for you.</span><span data-l="zh">工作室正在准备中。欢迎先联系我们，为你预留一个创始学员名额。</span></p>
+    </div>
+    <div class="contact" id="contact"></div>
+    <p class="small" id="regular" hidden><span data-l="en">Already a client?</span><span data-l="zh">已经是学员？</span> <a href="#"><span data-l="en">Book a regular session</span><span data-l="zh">预约私教课</span></a></p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Aurelle Pilates · 九蕾普拉提 · Ferny Grove, Brisbane QLD<span id="abn"></span></span>
+    <a href="#top"><span data-l="en">Back to top</span><span data-l="zh">回到顶部</span></a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var S = window.SITE || {};
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+
+  // 语言切换
+  $('lang').onclick = function () {
+    var zh = document.documentElement.lang !== 'zh-CN';
+    document.documentElement.lang = zh ? 'zh-CN' : 'en';
+    try { localStorage.setItem('lang', zh ? 'zh' : 'en'); } catch (e) {}
+  };
+
+  // Google Calendar 预约页：去掉 /u/0/，加 gv=true 以便嵌入
+  function embed(u) {
+    u = u.replace(/\/u\/\d+\//, '/');
+    return u + (u.indexOf('?') < 0 ? '?' : '&') + 'gv=true';
+  }
+  if (S.bookingFirst) {
+    $('cal').innerHTML = '<iframe title="Booking" loading="lazy" src="' + esc(embed(S.bookingFirst)) + '"></iframe>';
+    $('cal').hidden = false;
+    $('soon').hidden = true;
+  }
+  if (S.bookingRegular) {
+    $('regular').querySelector('a').href = S.bookingRegular;
+    $('regular').querySelector('a').target = '_blank';
+    $('regular').hidden = false;
+  }
+
+  // 联系方式
+  var c = [];
+  if (S.phone) c.push('<a class="btn ghost sm" href="sms:' + esc(S.phone.replace(/\s/g, '')) + '"><span data-l="en">Text ' + esc(S.phone) + '</span><span data-l="zh">短信 ' + esc(S.phone) + '</span></a>');
+  if (S.email) c.push('<a class="btn ghost sm" href="mailto:' + esc(S.email) + '">' + esc(S.email) + '</a>');
+  if (S.instagram) c.push('<a class="btn ghost sm" href="https://instagram.com/' + esc(S.instagram) + '" target="_blank" rel="noopener">@' + esc(S.instagram) + '</a>');
+  $('contact').innerHTML = c.join('');
+
+  // 资质、优惠、ABN
+  if (S.credentials && (S.credentials.en || S.credentials.zh)) {
+    var p = $('cred').children;
+    p[0].textContent = S.credentials.en || S.credentials.zh;
+    p[1].textContent = S.credentials.zh || S.credentials.en;
+    $('cred').hidden = false;
+  }
+  if (S.founding) $('founding').hidden = false;
+  if (S.abn) $('abn').textContent = ' · ABN ' + S.abn;
+  $('yr').textContent = new Date().getFullYear();
+
+  // 滚动效果
+  var h = document.querySelector('header');
+  addEventListener('scroll', function () { h.classList.toggle('scrolled', scrollY > 8); }, { passive: true });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
+</body>
+</html>
