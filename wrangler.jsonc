@@ -1,0 +1,7 @@
+{
+  // Cloudflare 部署设置：运行 npx wrangler deploy 发布
+  "name": "aurelle-pilates",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "." },
+  "routes": [{ "pattern": "pilates.vensoai.com", "custom_domain": true }]
+}
