@@ -1,0 +1,309 @@
+<!doctype html><html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Portal · Aurelle</title><link rel="icon" href="/favicon.svg">
+<style>
+:root{--bg:#FBF7F0;--bg2:#F3EBDD;--card:#FFFDF9;--ink:#2B2420;--mute:#6F625A;--gold:#B08236;--gold2:#8A6424;--line:#E6DAC6;--onGold:#FFFDF9;--warn:#B4532A;--ok:#4F7A4A}
+@media (prefers-color-scheme:dark){:root{--bg:#191512;--bg2:#221C18;--card:#251F1B;--ink:#F2EADF;--mute:#B9AB9C;--gold:#D6AE68;--gold2:#E8C88C;--line:#3A312A;--onGold:#191512;--warn:#E08A62;--ok:#8DBB86}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"PingFang SC","Hiragino Sans GB",sans-serif}
+a{color:var(--gold2)}button,input,select,textarea{font:inherit;color:inherit}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar{max-width:1100px;margin:auto;padding:10px 16px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.brand{font:600 18px Georgia,"Songti SC",serif;color:var(--gold2);margin-right:auto;text-decoration:none}
+.bar nav{display:flex;gap:4px;flex-wrap:wrap}
+.bar nav a{padding:6px 12px;border-radius:999px;text-decoration:none;color:var(--mute);font-size:14px}
+.bar nav a.on{background:var(--gold);color:var(--onGold)}
+main{max-width:1100px;margin:auto;padding:20px 16px 60px}
+h1{font:600 24px Georgia,"Songti SC",serif;margin:0 0 16px}h2{font-size:17px;margin:0 0 10px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.sp{flex:1}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:16px}
+.stat b{display:block;font:500 30px Georgia,serif;color:var(--gold2)}.stat span{color:var(--mute);font-size:13px}
+.btn{border:1px solid var(--gold);background:var(--gold);color:var(--onGold);border-radius:999px;padding:7px 16px;cursor:pointer;font-size:14px;text-decoration:none;display:inline-block}
+.btn.ghost{background:none;color:var(--gold2)}.btn.sm{padding:4px 10px;font-size:13px}.btn.danger{background:none;border-color:var(--warn);color:var(--warn)}
+input,select,textarea{border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:8px 10px;width:100%}
+textarea{min-height:80px;resize:vertical}
+label{display:block;font-size:13px;color:var(--mute);margin:10px 0 4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}@media (max-width:520px){.two{grid-template-columns:1fr}}
+.list{list-style:none;margin:0;padding:0}.list li{padding:10px 0;border-top:1px solid var(--line)}.list li:first-child{border-top:0}
+.muted{color:var(--mute);font-size:13px}.warn{color:var(--warn)}.ok{color:var(--ok)}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;border:1px solid var(--line);color:var(--mute);white-space:nowrap}
+.tag.active,.tag.done{border-color:var(--ok);color:var(--ok)}.tag.trial,.tag.booked{border-color:var(--gold);color:var(--gold2)}
+.tag.late_cancel,.tag.no_show{border-color:var(--warn);color:var(--warn)}
+.health{background:color-mix(in srgb,var(--warn) 10%,transparent);border-left:3px solid var(--warn);padding:8px 10px;border-radius:6px;white-space:pre-wrap;font-size:14px}
+.pre{white-space:pre-wrap}
+body,.stat b{font-variant-numeric:lining-nums}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:9px 6px;border-top:1px solid var(--line);vertical-align:top;font-size:14px}
+th{color:var(--mute);font-weight:500;font-size:13px;border-top:0}tr.click{cursor:pointer}tr.click:hover td{background:var(--bg2)}
+@media (max-width:640px){.hide-sm{display:none}}
+.day{margin-bottom:14px}.day h3{font-size:14px;margin:0 0 6px;color:var(--gold2)}.day.today h3::after{content:" · 今天";color:var(--warn)}
+.slot{display:flex;gap:10px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:6px;cursor:pointer}
+.slot .t{font-variant-numeric:tabular-nums;min-width:92px;color:var(--gold2);font-weight:600}.slot.personal{background:var(--bg2)}.slot.cancelled{opacity:.5;text-decoration:line-through}
+dialog{border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);padding:20px;width:min(560px,calc(100% - 24px));max-height:calc(100% - 24px)}
+dialog::backdrop{background:rgba(0,0,0,.35)}
+.err{color:var(--warn);font-size:14px;min-height:20px;margin-top:8px}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 16px;border-radius:999px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.show{opacity:1}
+</style></head><body>
+<header><div class="bar"><a class="brand" href="#/">Aurelle Portal</a>
+<nav><a href="#/" data-n="home">概览</a><a href="#/schedule" data-n="schedule">日程</a><a href="#/clients" data-n="clients">学员</a><a href="/portal/tutorial">备课</a></nav>
+<form method="post" action="/portal/logout" style="margin:0"><button class="btn ghost sm">退出</button></form></div></header>
+<main id="main"></main>
+<dialog id="dlg"><form id="dlgForm" method="dialog"></form></dialog>
+<div id="toast"></div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CS = {lead:'咨询',trial:'体验',active:'在上课',paused:'暂停',archived:'归档'};
+const SS = {booked:'已预约',done:'已上',cancelled:'已取消',late_cancel:'迟取消',no_show:'未到'};
+const PK = {first:['首次体验课',1,49,7],foundations6:['入门 6 节',6,330,56],founding6:['创始学员入门 6 节',6,270,56],single:['单节',1,75,null],ten:['10 节包',10,650,122],other:['其他',1,null,null]};
+const WD = ['周日','周一','周二','周三','周四','周五','周六'];
+let NOW = '';
+
+async function api(path, opt = {}) {
+  const r = await fetch('/portal/api' + path, {method: opt.method || 'GET', headers: {'content-type':'application/json','x-portal':'1'},
+    body: opt.body ? JSON.stringify(opt.body) : undefined});
+  if (r.status === 401) { location.href = '/portal'; throw new Error('login'); }
+  const d = await r.json();
+  if (!r.ok) { const e = new Error(d.error || '出错了'); e.data = d; e.status = r.status; throw e; }
+  return d;
+}
+function toast(t) { const el = $('#toast'); el.textContent = t; el.classList.add('show'); setTimeout(() => el.classList.remove('show'), 1800); }
+const today = () => (NOW || new Date(Date.now() + 36e6).toISOString()).slice(0, 10);
+const addDays = (d, n) => new Date(Date.parse(d + 'T00:00:00Z') + n * 864e5).toISOString().slice(0, 10);
+const monday = d => { const w = new Date(d + 'T00:00:00Z').getUTCDay(); return addDays(d, -((w + 6) % 7)); };
+const fmtDay = d => { const x = new Date(d + 'T00:00:00Z'); return `${x.getUTCMonth()+1}月${x.getUTCDate()}日 ${WD[x.getUTCDay()]}`; };
+const endTime = s => { const t = new Date(Date.parse(s.starts_at + ':00Z') + s.duration_min * 6e4); return t.toISOString().slice(11, 16); };
+const tag = (k, map) => `<span class="tag ${k}">${map[k] || k}</span>`;
+
+// ---------- 弹窗表单 ----------
+function form(title, fields, values, onSave, extra = '') {
+  const f = $('#dlgForm');
+  f.innerHTML = `<h2>${title}</h2>${fields}<div class="err" id="ferr"></div>
+    <div class="row" style="margin-top:12px">${extra}<span class="sp"></span><button class="btn ghost" value="cancel" formnovalidate>取消</button><button class="btn" value="ok">保存</button></div>`;
+  for (const [k, v] of Object.entries(values || {})) {
+    const el = f.elements[k]; if (!el) continue;
+    if (el.type === 'checkbox') el.checked = !!v; else el.value = v ?? '';
+  }
+  f.onsubmit = async e => {
+    if (e.submitter?.value !== 'ok') return;
+    e.preventDefault();
+    const data = Object.fromEntries([...f.elements].filter(x => x.name).map(x => [x.name, x.type === 'checkbox' ? x.checked : x.value]));
+    try { await onSave(data); $('#dlg').close(); route(); }
+    catch (err) { if (err.message !== 'retry') $('#ferr').textContent = err.message; }
+  };
+  $('#dlg').showModal();
+  return f;
+}
+
+function clientForm(c) {
+  form(c ? '编辑学员' : '新学员', `
+    <label>姓名 *</label><input name="name" required>
+    <div class="two"><div><label>电话</label><input name="phone" type="tel"></div><div><label>邮箱</label><input name="email" type="email"></div></div>
+    <div class="two"><div><label>状态</label><select name="status">${Object.entries(CS).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></div>
+    <div><label>上课语言</label><select name="language"><option value="zh">中文</option><option value="en">English</option></select></div></div>
+    <div class="two"><div><label>出生年份</label><input name="birth_year" type="number" min="1920" max="2020"></div><div><label>怎么找到我们</label><input name="source" placeholder="朋友介绍 / 小红书 / Google…"></div></div>
+    <label>目标</label><textarea name="goals" placeholder="想改善什么、为什么来练"></textarea>
+    <label>健康情况 / 注意事项</label><textarea name="health" placeholder="伤病、手术、怀孕、疼痛、不能做的动作…"></textarea>
+    <div class="two"><div><label>健康问卷填写日期</label><input name="questionnaire_on" type="date"></div><div><label>同意书签署日期</label><input name="consent_on" type="date"></div></div>
+    <label>备注</label><textarea name="notes"></textarea>`,
+    c || {status:'lead', language:'zh'},
+    async d => { if (c) await api('/clients/' + c.id, {method:'PUT', body:d}); else { const r = await api('/clients', {method:'POST', body:d}); location.hash = '#/clients/' + r.id; } toast('已保存'); },
+    c ? `<button class="btn danger sm" type="button" id="delC">删除</button>` : '');
+  if (c) $('#delC').onclick = async () => {
+    if (!confirm(`确定删除「${c.name}」？这位学员的课程包和全部课堂记录都会一起删除，不能恢复。\n不再来上课的学员建议把状态改成「归档」。`)) return;
+    await api('/clients/' + c.id, {method:'DELETE'}); $('#dlg').close(); location.hash = '#/clients'; toast('已删除');
+  };
+}
+
+function packageForm(clientId, p) {
+  const f = form(p ? '编辑课程包' : '新课程包', `
+    <label>类型</label><select name="kind">${Object.entries(PK).map(([k,v])=>`<option value="${k}">${v[0]}</option>`).join('')}</select>
+    <div class="two"><div><label>节数</label><input name="sessions_total" type="number" min="1" required></div><div><label>价格（澳元）</label><input name="price" type="number" step="0.01"></div></div>
+    <div class="two"><div><label>购买日期</label><input name="purchased_on" type="date" required></div><div><label>有效期至</label><input name="expires_on" type="date"></div></div>
+    <label style="display:flex;gap:8px;align-items:center;color:var(--ink)"><input name="paid" type="checkbox" style="width:auto">已付款</label>
+    <label>备注</label><textarea name="notes" style="min-height:50px"></textarea>`,
+    p || {kind:'foundations6', sessions_total:6, price:330, purchased_on:today(), expires_on:addDays(today(),56)},
+    async d => { d.client_id = clientId; if (p) await api('/packages/' + p.id, {method:'PUT', body:d}); else await api('/packages', {method:'POST', body:d}); toast('已保存'); },
+    p ? `<button class="btn danger sm" type="button" id="delP">删除</button>` : '');
+  f.elements.kind.onchange = () => { const v = PK[f.elements.kind.value]; f.elements.sessions_total.value = v[1]; f.elements.price.value = v[2] ?? '';
+    f.elements.expires_on.value = v[3] ? addDays(f.elements.purchased_on.value || today(), v[3]) : ''; };
+  if (p) $('#delP').onclick = async () => { if (!confirm('删除这个课程包？已经记录的课程会保留，只是不再关联到这个包。')) return;
+    await api('/packages/' + p.id, {method:'DELETE'}); $('#dlg').close(); route(); };
+}
+
+async function sessionForm(s, preset = {}) {
+  const clients = await api('/clients');
+  const f = form(s ? '编辑课程' : '新课程', `
+    <label>学员</label><select name="client_id"><option value="">— 个人安排（不是上课）—</option>${clients.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select>
+    <div id="titleBox"><label>标题</label><input name="title" placeholder="例如：去医院 / 器械保养 / 休息"></div>
+    <div class="two"><div><label>日期</label><input name="date" type="date" required></div><div><label>开始时间</label><input name="time" type="time" step="900" required></div></div>
+    <div class="two"><div><label>时长（分钟）</label><input name="duration_min" type="number" min="15" step="15"></div>
+    <div><label>状态</label><select name="status">${Object.entries(SS).map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select></div></div>
+    <div id="lessonBox"><div class="two"><div><label>扣哪个课程包</label><select name="package_id"><option value="">不扣课程包</option></select></div>
+    <div><label>入门课第几节</label><select name="lesson_no"><option value="">—</option>${[1,2,3,4,5,6].map(n=>`<option>${n}</option>`).join('')}</select></div></div>
+    <div id="healthBox"></div>
+    <label>课堂记录</label><textarea name="notes" placeholder="做了哪些动作、弹簧、身体的反应、下次的重点…" style="min-height:120px"></textarea></div>`,
+    s ? {...s, date:s.starts_at.slice(0,10), time:s.starts_at.slice(11,16)} : {duration_min:60, status:'booked', date:today(), time:'09:00', ...preset},
+    async d => {
+      const body = {client_id: d.client_id || null, title: d.client_id ? null : d.title, starts_at: d.date + 'T' + d.time,
+        duration_min: Number(d.duration_min) || 60, status: d.status, package_id: d.client_id && d.package_id ? Number(d.package_id) : null,
+        lesson_no: d.client_id && d.lesson_no ? Number(d.lesson_no) : null, notes: d.notes};
+      const send = force => s ? api('/sessions/' + s.id, {method:'PUT', body:{...body, force}}) : api('/sessions', {method:'POST', body:{...body, force}});
+      try { await send(false); }
+      catch (e) {
+        if (e.status !== 409) throw e;
+        const list = e.data.conflicts.map(c => `${c.starts_at.replace('T',' ')} ${c.who || ''}`).join('\n');
+        if (!confirm('这个时间和下面的安排重叠了：\n' + list + '\n\n还是要保存吗？')) throw new Error('retry');
+        await send(true);
+      }
+      toast('已保存');
+    },
+    s ? `<button class="btn danger sm" type="button" id="delS">删除</button>` : '');
+  const sync = async () => {
+    const cid = f.elements.client_id.value;
+    $('#titleBox').style.display = cid ? 'none' : '';
+    $('#lessonBox').style.display = cid ? '' : 'none';
+    const sel = f.elements.package_id; sel.length = 1; $('#healthBox').innerHTML = '';
+    if (!cid) return;
+    const d = await api('/clients/' + cid);
+    for (const p of d.packages) {
+      const left = p.sessions_total - p.used, expired = p.expires_on && p.expires_on < today();
+      if ((left > 0 && !expired) || p.id == (s && s.package_id))
+        sel.add(new Option(`${PK[p.kind]?.[0] || p.kind} · 剩 ${left} 节${p.expires_on ? ' · 至 ' + p.expires_on : ''}`, p.id));
+    }
+    if (s && s.package_id && String(s.client_id) === cid) sel.value = s.package_id;
+    else if (!s && sel.length > 1) sel.selectedIndex = 1;
+    if (d.client.health) $('#healthBox').innerHTML = `<label>健康提醒</label><div class="health">${esc(d.client.health)}</div>`;
+  };
+  f.elements.client_id.onchange = sync;
+  await sync();
+  if (s) $('#delS').onclick = async () => { if (!confirm('删除这节课？取消的课建议把状态改成「已取消」，这样记录还在。')) return;
+    await api('/sessions/' + s.id, {method:'DELETE'}); $('#dlg').close(); route(); };
+}
+
+// ---------- 页面 ----------
+function slot(s, showDate) {
+  const who = s.client_id ? esc(s.client_name) : esc(s.title || '个人安排');
+  return `<div class="slot ${s.client_id ? '' : 'personal'} ${s.status === 'cancelled' ? 'cancelled' : ''}" data-s='${esc(JSON.stringify(s))}'>
+    <span class="t">${showDate ? fmtDay(s.starts_at.slice(0,10)).replace(/ .*/, '') + ' ' : ''}${s.starts_at.slice(11,16)}–${endTime(s)}</span>
+    <span class="sp"><b>${who}</b>${s.lesson_no ? ` <span class="muted">· 入门第 ${s.lesson_no} 节</span>` : ''}
+    ${s.client_health ? `<div class="muted warn">⚠ ${esc(s.client_health.split('\n')[0].slice(0, 60))}</div>` : ''}</span>
+    ${s.client_id ? tag(s.status, SS) : ''}</div>`;
+}
+function bindSlots() { document.querySelectorAll('.slot').forEach(el => el.onclick = () => sessionForm(JSON.parse(el.dataset.s))); }
+
+async function home() {
+  const d = await api('/overview'); NOW = d.now;
+  const t = today(), byDay = {};
+  d.upcoming.forEach(s => (byDay[s.starts_at.slice(0,10)] ||= []).push(s));
+  const todays = byDay[t] || [];
+  $('#main').innerHTML = `<div class="row"><h1>你好，Jessica</h1><span class="sp"></span><button class="btn" id="newS">＋ 新课程</button></div>
+    <div class="stats">
+      <div class="card stat"><b>${todays.filter(s=>s.client_id).length}</b><span>今天的课</span></div>
+      <div class="card stat"><b>${d.counts.week}</b><span>未来 7 天的课</span></div>
+      <div class="card stat"><b>${d.counts.active}</b><span>在上课的学员</span></div>
+      <div class="card stat"><b>${d.counts.done_month}</b><span>本月已上</span></div>
+      <div class="card stat"><b>${d.counts.leads}</b><span>咨询中</span></div></div>
+    <div class="grid">
+      <div class="card"><h2>今天 · ${fmtDay(t)}</h2>${todays.length ? todays.map(s => slot(s)).join('') : '<p class="muted">今天没有安排。</p>'}</div>
+      <div class="card"><h2>接下来 7 天</h2>${Object.keys(byDay).filter(k => k > t).map(k => `<div class="day"><h3>${fmtDay(k)}</h3>${byDay[k].map(s => slot(s)).join('')}</div>`).join('') || '<p class="muted">还没有安排。</p>'}</div>
+      <div class="card"><h2>需要处理</h2><ul class="list">
+        ${d.todo.map(s => `<li>📝 <a href="#/clients/${s.client_id}">${esc(s.client_name)}</a> ${s.starts_at.replace('T',' ')} 的课还没标记上没上 <button class="btn ghost sm" data-s='${esc(JSON.stringify(s))}'>记录</button></li>`).join('')}
+        ${d.lowPkgs.map(p => `<li>📦 <a href="#/clients/${p.client_id}">${esc(p.client_name)}</a> 的${PK[p.kind]?.[0] || '课程包'}还剩 ${p.sessions_total - p.used} 节${p.expires_on ? '，' + p.expires_on + ' 到期' : ''}，可以聊续课</li>`).join('')}
+        ${d.missing.map(c => `<li>⚠️ <a href="#/clients/${c.id}">${esc(c.name)}</a> 还没有${!c.questionnaire_on ? '健康问卷' : ''}${!c.questionnaire_on && !c.consent_on ? '和' : ''}${!c.consent_on ? '同意书' : ''}</li>`).join('')}
+        ${!d.todo.length && !d.lowPkgs.length && !d.missing.length ? '<li class="muted">都处理好了。</li>' : ''}</ul></div>
+    </div>`;
+  $('#newS').onclick = () => sessionForm(null);
+  bindSlots();
+  document.querySelectorAll('.list button[data-s]').forEach(b => b.onclick = () => sessionForm(JSON.parse(b.dataset.s)));
+}
+
+async function schedule(q) {
+  if (!NOW) NOW = (await api('/overview')).now;
+  const start = monday(q.get('w') || today()), end = addDays(start, 7);
+  const list = await api(`/sessions?from=${start}&to=${end}`);
+  const byDay = {}; list.forEach(s => (byDay[s.starts_at.slice(0,10)] ||= []).push(s));
+  const n = list.filter(s => s.client_id && s.status !== 'cancelled').length;
+  $('#main').innerHTML = `<div class="row"><h1>日程</h1><span class="sp"></span><button class="btn" id="newS">＋ 新课程</button></div>
+    <div class="row" style="margin-bottom:14px"><a class="btn ghost sm" href="#/schedule?w=${addDays(start,-7)}">‹ 上一周</a>
+    <a class="btn ghost sm" href="#/schedule">本周</a><a class="btn ghost sm" href="#/schedule?w=${end}">下一周 ›</a>
+    <span class="muted">${fmtDay(start)} – ${fmtDay(addDays(start,6))} · ${n} 节课</span></div>
+    ${[0,1,2,3,4,5,6].map(i => { const d = addDays(start, i);
+      return `<div class="day ${d === today() ? 'today' : ''}"><h3>${fmtDay(d)} <button class="btn ghost sm" data-d="${d}" style="margin-left:6px">＋</button></h3>
+      ${(byDay[d] || []).map(s => slot(s)).join('') || '<p class="muted" style="margin:0 0 6px">没有安排</p>'}</div>`; }).join('')}`;
+  $('#newS').onclick = () => sessionForm(null, {date: start < today() && today() < end ? today() : start});
+  document.querySelectorAll('button[data-d]').forEach(b => b.onclick = () => sessionForm(null, {date: b.dataset.d}));
+  bindSlots();
+}
+
+async function clients(q) {
+  const st = q.get('status') || '', s = q.get('q') || '';
+  const list = await api(`/clients?status=${st}&q=${encodeURIComponent(s)}`);
+  $('#main').innerHTML = `<div class="row"><h1>学员</h1><span class="sp"></span><button class="btn" id="newC">＋ 新学员</button></div>
+    <div class="row" style="margin-bottom:12px"><input id="q" placeholder="搜索姓名、电话、邮箱" value="${esc(s)}" style="flex:1;min-width:160px;width:auto">
+    <select id="st" style="width:auto"><option value="">全部（不含归档）</option>${Object.entries(CS).map(([k,v])=>`<option value="${k}" ${k===st?'selected':''}>${v}</option>`).join('')}</select></div>
+    <div class="card" style="padding:4px 12px"><table><thead><tr><th>姓名</th><th>状态</th><th>剩余课时</th><th class="hide-sm">上次</th><th class="hide-sm">下次</th></tr></thead><tbody>
+    ${list.map(c => `<tr class="click" data-id="${c.id}"><td><b>${esc(c.name)}</b>${c.has_health ? ' <span class="warn" title="有健康注意事项">⚠</span>' : ''}<div class="muted">${esc(c.phone || c.email || '')}</div></td>
+      <td>${tag(c.status, CS)}</td><td>${c.remaining > 0 ? c.remaining + ' 节' : '<span class="muted">—</span>'}</td>
+      <td class="hide-sm muted">${c.last_session ? c.last_session.slice(0,10) : '—'}</td><td class="hide-sm">${c.next_session ? c.next_session.replace('T',' ') : '—'}</td></tr>`).join('')
+      || '<tr><td colspan="5" class="muted">还没有学员。点右上角「新学员」添加第一位。</td></tr>'}</tbody></table></div>
+    <p class="muted" style="margin-top:16px"><a href="/portal/api/export">下载全部数据备份（JSON）</a>：建议每个月下载一次，存到自己的电脑。</p>`;
+  $('#newC').onclick = () => clientForm(null);
+  let timer; $('#q').oninput = e => { clearTimeout(timer); timer = setTimeout(() => location.hash = `#/clients?status=${st}&q=${encodeURIComponent(e.target.value)}`, 400); };
+  $('#st').onchange = e => location.hash = `#/clients?status=${e.target.value}&q=${encodeURIComponent($('#q').value)}`;
+  document.querySelectorAll('tr[data-id]').forEach(r => r.onclick = () => location.hash = '#/clients/' + r.dataset.id);
+  if (s) { const i = $('#q'); i.focus(); i.setSelectionRange(s.length, s.length); }
+}
+
+async function client(id) {
+  const {client: c, packages, sessions} = await api('/clients/' + id);
+  if (!NOW) NOW = (await api('/overview')).now;
+  const age = c.birth_year ? new Date().getFullYear() - c.birth_year : null;
+  const done = sessions.filter(s => s.status === 'done').length;
+  const upcoming = sessions.filter(s => s.status === 'booked' && s.starts_at >= NOW).reverse();
+  const past = sessions.filter(s => !upcoming.includes(s)); // 过去还标着"已预约"的，也放在记录里，等着补记录
+  $('#main').innerHTML = `<p style="margin:0 0 8px"><a href="#/clients">‹ 学员</a></p>
+    <div class="row"><h1 style="margin:0">${esc(c.name)}</h1>${tag(c.status, CS)}<span class="sp"></span>
+    <button class="btn ghost" id="editC">编辑资料</button><button class="btn" id="newS">＋ 新课程</button></div>
+    <p class="muted">${[c.phone && `<a href="tel:${esc(c.phone)}">${esc(c.phone)}</a>`, c.email && `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`,
+      c.language === 'en' ? 'English' : '中文', age && `约 ${age} 岁`, c.source && '来源：' + esc(c.source), `已上 ${done} 节`].filter(Boolean).join(' · ')}</p>
+    <div class="grid">
+      <div class="card"><h2>身体与目标</h2>
+        ${c.health ? `<div class="health">${esc(c.health)}</div>` : '<p class="muted">没有记录健康注意事项。</p>'}
+        ${c.goals ? `<label>目标</label><div class="pre">${esc(c.goals)}</div>` : ''}
+        <label>文件</label><div>${c.questionnaire_on ? `<span class="ok">✓ 健康问卷 ${c.questionnaire_on}</span>` : '<span class="warn">✗ 还没填健康问卷</span>'}<br>
+        ${c.consent_on ? `<span class="ok">✓ 同意书 ${c.consent_on}</span>` : '<span class="warn">✗ 还没签同意书</span>'}</div>
+        ${c.notes ? `<label>备注</label><div class="pre">${esc(c.notes)}</div>` : ''}</div>
+      <div class="card"><div class="row"><h2 style="margin:0">课程包</h2><span class="sp"></span><button class="btn ghost sm" id="newP">＋ 课程包</button></div>
+        <ul class="list" style="margin-top:8px">${packages.map(p => { const left = p.sessions_total - p.used, exp = p.expires_on && p.expires_on < today();
+          return `<li class="row" data-p='${esc(JSON.stringify(p))}' style="cursor:pointer"><span class="sp"><b>${PK[p.kind]?.[0] || p.kind}</b> ${p.price != null ? '$' + p.price : ''}
+          ${p.paid ? '<span class="ok">已付</span>' : '<span class="warn">未付</span>'}<div class="muted">${p.purchased_on} 购买${p.expires_on ? ' · 有效期至 ' + p.expires_on : ''}${exp ? ' <span class="warn">已过期</span>' : ''}</div></span>
+          <span style="text-align:right"><b>剩 ${left}</b> / ${p.sessions_total}${p.booked ? `<div class="muted">已约 ${p.booked}</div>` : ''}</span></li>`; }).join('') || '<li class="muted">还没有课程包。</li>'}</ul></div>
+    </div>
+    <div class="card" style="margin-top:16px"><h2>已预约</h2>${upcoming.length ? upcoming.map(s => slot(s, true)).join('') : '<p class="muted">没有预约。</p>'}</div>
+    <div class="card" style="margin-top:16px"><h2>课堂记录</h2><ul class="list">${past.map(s => `<li class="click" data-s='${esc(JSON.stringify(s))}' style="cursor:pointer">
+      <div class="row"><b>${s.starts_at.replace('T', ' ')}</b>${tag(s.status, SS)}${s.lesson_no ? `<span class="muted">入门第 ${s.lesson_no} 节</span>` : ''}</div>
+      ${s.notes ? `<div class="pre" style="margin-top:4px">${esc(s.notes)}</div>` : '<div class="muted">没有记录</div>'}</li>`).join('') || '<li class="muted">还没有上过课。</li>'}</ul></div>`;
+  $('#editC').onclick = () => clientForm(c);
+  $('#newS').onclick = () => sessionForm(null, {client_id: c.id});
+  $('#newP').onclick = () => packageForm(c.id);
+  document.querySelectorAll('[data-p]').forEach(el => el.onclick = () => packageForm(c.id, JSON.parse(el.dataset.p)));
+  document.querySelectorAll('li[data-s]').forEach(el => el.onclick = () => sessionForm(JSON.parse(el.dataset.s)));
+  document.querySelectorAll('.slot').forEach(el => el.onclick = () => sessionForm(JSON.parse(el.dataset.s)));
+}
+
+async function route() {
+  const [path, qs] = (location.hash.slice(1) || '/').split('?');
+  const q = new URLSearchParams(qs || ''), parts = path.split('/').filter(Boolean);
+  const page = parts[0] || 'home';
+  document.querySelectorAll('.bar nav a[data-n]').forEach(a => a.classList.toggle('on', a.dataset.n === page));
+  try {
+    if (page === 'schedule') await schedule(q);
+    else if (page === 'clients' && parts[1]) await client(parts[1]);
+    else if (page === 'clients') await clients(q);
+    else await home();
+  } catch (e) { if (e.message !== 'login') $('#main').innerHTML = `<p class="warn">出错了：${esc(e.message)}</p>`; }
+}
+addEventListener('hashchange', route);
+route();
+</script></body></html>

@@ -25,9 +25,16 @@ git add -A && git commit -m "更新网站" && git push
 ```
 `wrangler deploy` 发布到网站（几秒钟生效），`git` 那一行把源码备份到 GitHub。
 
-## 私人备课页 /tutorial
-`worker.js` 只处理 `/tutorial`，其他页面照常是静态文件。页面内容 `_private/tutorial.html` 由 `python3 ../tools/build/tutorial.py` 生成，**不进 git**（这个仓库是公开的），发布前要先生成。
-密码存在 Cloudflare secret 里，改密码：`npx wrangler secret put TUTORIAL_PASSWORD`（改完旧的登录自动失效）。本地测试用 `.dev.vars`（不进 git）。
+## Portal 后台 /portal（CRM + 备课）
+主页右上角和页脚有 "Portal" 入口。现在只有管理员账号 `admin`，登录 2 小时后要重新输密码。
+- `worker.js`：只处理 `/portal`（`/tutorial` 会跳到 `/portal/tutorial`），其他页面照常是静态文件。
+- `portal/auth.js` 登录和会话，`portal/api.js` 数据接口，`portal/app.html` 管理界面，`portal/login.html` 登录页。
+- 数据在 Cloudflare D1 数据库 `aurelle-crm`（大洋洲区域）；表结构在 `migrations/`。
+- 备课页 `_private/tutorial.html` 由 `python3 ../tools/build/tutorial.py` 生成，**不进 git**（这个仓库是公开的），发布前要先生成。
+- 改密码：`npx wrangler secret put ADMIN_PASSWORD`。
+- 本地测试：`.dev.vars` 写 `ADMIN_PASSWORD="随便一个测试密码"`，然后
+  `npx wrangler d1 migrations apply aurelle-crm --local --persist-to /tmp/aurelle-d1`、
+  `npx wrangler dev --persist-to /tmp/aurelle-d1`（本地数据库一定要放在网站目录外面，否则每次写数据都会让开发服务器重新加载）。
 
 ## 加照片（强烈建议）
 把 Jessica 的照片存成 `jessica.jpg`（竖版，4:5）放进这个文件夹，然后在 `index.html` 里把

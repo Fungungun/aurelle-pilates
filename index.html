@@ -74,7 +74,7 @@ header.scrolled{border-color:var(--line)}
 .btn.ghost{background:none;color:var(--ink);border-color:var(--line)}
 .btn.ghost:hover{border-color:var(--gold);background:none}
 .btn.sm{padding:10px 20px;font-size:14px}
-@media (max-width:860px){.links a:not(.btn){display:none}}
+@media (max-width:860px){.links a:not(.btn):not(.portal){display:none}}
 @media (max-width:420px){.links .btn{display:none}.brand b{font-size:19px}}
 
 /* 首屏 */
@@ -214,6 +214,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
       <a href="#studio"><span data-l="en">Studio</span><span data-l="zh">工作室</span></a>
       <a href="#faq"><span data-l="en">FAQ</span><span data-l="zh">常见问题</span></a>
       <button class="lang" id="lang" type="button" aria-label="Switch language"><span data-l="en">中文</span><span data-l="zh">EN</span></button>
+      <a class="portal" href="/portal"><span data-l="en">Portal</span><span data-l="zh">登录</span></a>
       <a class="btn sm" href="#book"><span data-l="en">Book</span><span data-l="zh">预约</span></a>
     </nav>
   </div>
@@ -466,7 +467,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> Aurelle Pilates · 九蕾普拉提 · Brisbane, QLD<span id="abn"></span></span>
-    <a href="#top"><span data-l="en">Back to top</span><span data-l="zh">回到顶部</span></a>
+    <span><a href="/portal"><span data-l="en">Portal</span><span data-l="zh">登录</span></a> · <a href="#top"><span data-l="en">Back to top</span><span data-l="zh">回到顶部</span></a></span>
   </div>
 </footer>
 

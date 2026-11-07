@@ -1,0 +1,22 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Portal · Aurelle Pilates</title><link rel="icon" href="/favicon.svg"><style>
+:root{--bg:#FBF7F0;--card:#FFFDF9;--ink:#2B2420;--mute:#6F625A;--gold:#B08236;--gold2:#8A6424;--line:#E6DAC6;--onGold:#FFFDF9;--warn:#B4532A}
+@media (prefers-color-scheme:dark){:root{--bg:#191512;--card:#251F1B;--ink:#F2EADF;--mute:#B9AB9C;--gold:#D6AE68;--gold2:#E8C88C;--line:#3A312A;--onGold:#191512;--warn:#E08A62}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,"PingFang SC",sans-serif;padding:16px}
+.box{width:min(360px,100%)}
+form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;gap:12px}
+h1{margin:0;font:600 24px Georgia,"Songti SC",serif;color:var(--gold2)}p{margin:0;color:var(--mute);font-size:13px}
+label{font-size:13px;color:var(--mute);margin-bottom:-6px}
+input{font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+button{font:inherit;padding:11px;border:0;border-radius:10px;background:var(--gold);color:var(--onGold);cursor:pointer}
+.err{color:var(--warn);font-size:14px}.back{display:block;text-align:center;margin-top:16px;color:var(--mute);font-size:13px}
+</style></head><body><div class="box">
+<form method="post" action="/portal/login">
+<h1>Aurelle Portal</h1>
+<p>Client accounts are coming soon. · 学员账号即将开放。</p>
+<label for="u">Username · 账号</label><input id="u" name="username" autocomplete="username" required autofocus>
+<label for="p">Password · 密码</label><input id="p" type="password" name="password" autocomplete="current-password" required>
+<!--ERROR--><button>Sign in · 登录</button></form>
+<a class="back" href="/">← Aurelle Pilates</a></div></body></html>

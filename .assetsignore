@@ -7,3 +7,5 @@ _private
 .dev.vars
 .gitignore
 node_modules
+portal
+migrations

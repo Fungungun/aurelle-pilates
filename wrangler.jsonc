@@ -1,10 +1,14 @@
 {
   // Cloudflare 部署设置：运行 npx wrangler deploy 发布
-  // 公开页面是静态文件；worker.js 只处理 /tutorial（私人备课页，密码在 secret TUTORIAL_PASSWORD）
+  // 公开页面是静态文件；worker.js 处理 /portal（后台：CRM + 备课，需要登录）
   // 发布前先运行 python3 ../tools/build/tutorial.py 生成 _private/tutorial.html
+  // 数据库表结构改动：在 migrations/ 加新文件，然后 npx wrangler d1 migrations apply aurelle-crm --remote
   "name": "aurelle-pilates",
   "compatibility_date": "2026-10-01",
   "main": "worker.js",
-  "assets": { "directory": ".", "binding": "ASSETS", "run_worker_first": ["/tutorial*"] },
+  "assets": { "directory": ".", "binding": "ASSETS", "run_worker_first": ["/portal*", "/tutorial*"] },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "aurelle-crm", "database_id": "400861f0-5a29-4c04-801a-9bfe683ca63d" }
+  ],
   "routes": [{ "pattern": "pilates.vensoai.com", "custom_domain": true }]
 }
