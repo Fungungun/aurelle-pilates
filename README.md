@@ -11,9 +11,9 @@
 | `favicon.svg` | 浏览器标签图标 |
 | `wrangler.jsonc` | Cloudflare 部署设置（域名 pilates.vensoai.com） |
 
-## 接上预约
-1. 按 `04-运营/06-经营方案.md` 第 5 节建好 Google Calendar 预约页。
-2. 把「首次体验课」预约页链接填进 `config.js` 的 `bookingFirst`，「老学员私教课」填进 `bookingRegular`。
+## 预约
+网上只能预约首次体验课（Square），其他课程只展示价格，上完体验课后和 Jessica 约、PayID/转账付款（见 `04-运营/06-经营方案.md` 第 5 节）。
+`config.js` 的 `bookingFirst` 填 Square 预约页链接；留空时网站显示"在线预约即将开放"。
 3. 发布（见下面）。网站上「在线预约即将开放」的卡片会自动换成可以直接选时间的日历。
 
 ## 改完后发布
