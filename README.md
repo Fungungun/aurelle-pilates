@@ -25,6 +25,10 @@ git add -A && git commit -m "更新网站" && git push
 ```
 `wrangler deploy` 发布到网站（几秒钟生效），`git` 那一行把源码备份到 GitHub。
 
+## 私人备课页 /tutorial
+`worker.js` 只处理 `/tutorial`，其他页面照常是静态文件。页面内容 `_private/tutorial.html` 由 `python3 ../tools/build/tutorial.py` 生成，**不进 git**（这个仓库是公开的），发布前要先生成。
+密码存在 Cloudflare secret 里，改密码：`npx wrangler secret put TUTORIAL_PASSWORD`（改完旧的登录自动失效）。本地测试用 `.dev.vars`（不进 git）。
+
 ## 加照片（强烈建议）
 把 Jessica 的照片存成 `jessica.jpg`（竖版，4:5）放进这个文件夹，然后在 `index.html` 里把
 `<span class="mono">J</span>` 换成 `<img src="jessica.jpg" alt="Jessica">`。

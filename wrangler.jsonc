@@ -1,7 +1,10 @@
 {
   // Cloudflare 部署设置：运行 npx wrangler deploy 发布
+  // 公开页面是静态文件；worker.js 只处理 /tutorial（私人备课页，密码在 secret TUTORIAL_PASSWORD）
+  // 发布前先运行 python3 ../tools/build/tutorial.py 生成 _private/tutorial.html
   "name": "aurelle-pilates",
   "compatibility_date": "2026-10-01",
-  "assets": { "directory": "." },
+  "main": "worker.js",
+  "assets": { "directory": ".", "binding": "ASSETS", "run_worker_first": ["/tutorial*"] },
   "routes": [{ "pattern": "pilates.vensoai.com", "custom_domain": true }]
 }
