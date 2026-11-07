@@ -1,5 +1,5 @@
 // Aurelle Pilates Worker：公开页面照常走静态文件；/portal 是登录后的后台（CRM + 备课）。
-// - 管理员账号 admin，密码在 Cloudflare secret ADMIN_PASSWORD（npx wrangler secret put ADMIN_PASSWORD）
+// - 管理员账号和密码在 Cloudflare secret ADMIN_USER / ADMIN_PASSWORD（npx wrangler secret put ADMIN_PASSWORD）
 // - 数据在 D1 数据库 aurelle-crm（binding DB），表结构见 migrations/
 // - 备课页 _private/tutorial.html 由 tools/build/tutorial.py 生成，不进 git、不作为静态文件发布，只给管理员看
 import tutorialPage from "./_private/tutorial.html";

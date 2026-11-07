@@ -1,4 +1,4 @@
-// Portal 登录：管理员账号 admin，密码在 Cloudflare secret ADMIN_PASSWORD 里（不写进代码）。
+// Portal 登录：管理员账号和密码都在 Cloudflare secret ADMIN_USER / ADMIN_PASSWORD 里（不写进代码）。
 // 登录后发一个随机令牌放进 cookie，数据库里只存它的哈希；2 小时后过期，需要重新输入密码。
 // 同一个 IP 15 分钟内输错 5 次就暂时锁住。
 export const SESSION_SECONDS = 2 * 60 * 60;
@@ -43,8 +43,9 @@ export async function login(req, env, username, password) {
   const a = await env.DB.prepare("SELECT fails, first_at FROM login_attempts WHERE ip = ?").bind(ip).first();
   if (a && t - a.first_at < FAIL_WINDOW && a.fails >= MAX_FAILS) return { error: "locked" };
 
-  const okUser = username.trim().toLowerCase() === "admin";
-  const want = env.ADMIN_PASSWORD || "";
+  const wantUser = env.ADMIN_USER || "", want = env.ADMIN_PASSWORD || "";
+  // 账号不分大小写
+  const okUser = wantUser !== "" && same(await sha256(username.trim().toLowerCase()), await sha256(wantUser.toLowerCase()));
   const okPass = want !== "" && same(await sha256(password), await sha256(want));
   if (!(okUser && okPass)) {
     if (!a || t - a.first_at >= FAIL_WINDOW)
