@@ -1,9 +1,8 @@
 // Aurelle Pilates 网站设置 —— 只需要改这个文件。
 // 留空 "" 的项目，网站上会自动隐藏。改完后重新发布即可（见 README.md）。
 window.SITE = {
-  // Google Calendar 预约页链接（日历 → 预约时间表 → 分享 → 复制链接）
-  bookingFirst: "",     // 首次体验课 First Session
-  bookingRegular: "",   // 老学员私教课 Session（可留空）
+  // 首次体验课的 Square 预约页链接（只有体验课在线预约；其他课程上完体验课后直接和 Jessica 约，PayID/转账付款）
+  bookingFirst: "https://book.squareup.com/appointments/o4la2fkfmti45f/location/LDCHHN3S1SPXF/services",
 
   // 联系方式
   phone: "",            // 例如 "0400 000 000"
